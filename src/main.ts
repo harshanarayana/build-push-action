@@ -49,8 +49,12 @@ async function cleanup(): Promise<void> {
   }
 }
 
-if (!stateHelper.IsPost) {
-  run();
-} else {
-  cleanup();
+
+export async function buildDocker(): Promise<void> {
+    return run()
 }
+
+export async function cleanupDocker(): Promise<void> {
+    return cleanup()
+}
+
